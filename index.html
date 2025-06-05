@@ -1,97 +1,126 @@
+<!-- TechPack科技博客 - HTML文档结构 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <!-- 页面基本信息设置 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TechFusion - 探索、创新、分享科技、旅行、生活方式的博客空间。">
-    <title>TechFusion | 科技博客</title>
+    <meta name="description" content="TechPack - 探索、创新、分享科技、旅行、生活方式的博客空间。">
+    <title>TechPack | 科技博客</title>
+    
+    <!-- 网站图标 - 使用SVG Base64编码的T字母图标 -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzY2N2VlYSIvPgo8dGV4dCB4PSIxNiIgeT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UPC90ZXh0Pgo8L3N2Zz4K">
+    
+    <!-- 字体预加载 - 提高页面加载性能 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 样式表引入 -->
+    <link rel="stylesheet" href="styles.css">                                           <!-- 主样式文件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  <!-- 字体图标库 -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">  <!-- 自定义字体 -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <div class="theme-switch">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-        <div class="theme-switch-toggle"></div>
+
+    <!-- 背景音乐播放器 -->
+    <audio id="background-music" loop preload="auto">
+        <source src="studio/backmusic.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+    </audio>
+    
+    <!-- 音乐控制按钮 - 位于页面右下角 -->
+    <div class="music-control">
+        <i class="fas fa-music"></i>                    <!-- 播放图标 -->
+        <i class="fas fa-pause" style="display: none;"></i>  <!-- 暂停图标 -->
     </div>
 
+    <!-- 网站头部导航栏 -->
     <header class="glass-effect">
         <div class="container">
+            <!-- 网站Logo -->
             <div class="logo">
-                <div class="logo-icon">
-                    <span class="circuit-line line1"></span>
-                    <span class="circuit-line line2"></span>
-                    <span class="circuit-line line3"></span>
-                    <span class="circuit-dot"></span>
-                </div>
                 <h1 class="tech-logo">
-                    <span class="tech-text">Tech</span><span class="fusion-text">Fusion</span><span class="blink-cursor">_</span>
+                    <span class="tech-text">Tech</span><span class="fusion-text">Pack</span>
                 </h1>
             </div>
+            
+            <!-- 主导航菜单 -->
             <nav>
                 <ul class="nav-links">
-                    <li class="animate__animated animate__fadeInDown" style="animation-delay: 0.1s;">
+                    <li>
                         <a href="#" class="active" data-text="首页"><i class="fas fa-home"></i> <span>首页</span></a>
                     </li>
-                    <li class="animate__animated animate__fadeInDown" style="animation-delay: 0.2s;">
+                    <li>
                         <a href="#" data-text="科技"><i class="fas fa-microchip"></i> <span>科技</span></a>
                     </li>
-                    <li class="animate__animated animate__fadeInDown" style="animation-delay: 0.3s;">
+                    <li>
                         <a href="#" data-text="旅行"><i class="fas fa-globe-asia"></i> <span>旅行</span></a>
                     </li>
-                    <li class="animate__animated animate__fadeInDown" style="animation-delay: 0.4s;">
+                    <li>
                         <a href="#" data-text="生活方式"><i class="fas fa-coffee"></i> <span>生活方式</span></a>
                     </li>
-                    <li class="animate__animated animate__fadeInDown" style="animation-delay: 0.5s;">
+                    <li>
                         <a href="#" data-text="关于我"><i class="fas fa-user"></i> <span>关于我</span></a>
                     </li>
                 </ul>
+                
+                <!-- 用户头像 -->
+                <div class="avatar-image">
+                    <img src="img/1.jpg" alt="技术博客头像" />
+                </div>
             </nav>
-            <!-- 删除搜索图标，简化头部控件 -->
         </div>
     </header>
+    <!-- 首页英雄区域 - 主要展示区 -->
     <section class="hero">
         <div class="container">
-            <!-- 简化标题，移除多余的动画类 -->
+            <!-- 网站主标题 -->
             <h1 class="hero-title">
-                <span class="highlight">Tech</span>Fusion Blog
+                <span class="highlight">Tech</span>Pack Blog
             </h1>
+            
+            <!-- 英雄区内容 -->
             <div class="hero-content">
-                <!-- 简化内容区域结构 -->
-                <h2 class="typing-text">探索_科技_创新_分享</h2>
+                <h2 class="typing-text">探索 · 科技 · 创新 · 分享</h2>      <!-- 打字机效果标题 -->
                 <p>欢迎来到我的科技博客空间，探索前沿科技与未来趋势</p>
+                
+                <!-- 行动号召按钮组 -->
                 <div class="cta-buttons">
-                    <a href="#" class="btn glow-btn"><i class="fas fa-rocket"></i> 开始探索</a>
-                    <a href="#" class="btn glow-btn"><i class="fas fa-paper-plane"></i> 订阅更新</a>
+                    <a href="#" class="btn"><i class="fas fa-rocket"></i> 开始探索</a>
+                    <a href="#" class="btn"><i class="fas fa-paper-plane"></i> 订阅更新</a>
                 </div>
             </div>
         </div>
     </section>
+    <!-- 网站主要内容区域 -->
     <main class="container main-content">
+        <!-- 博客文章展示区 -->
         <section class="posts">
             <div class="post-grid">
+                <!-- 第一篇文章卡片 -->
                 <article class="post-card framed-post">
+                    <!-- 文章信息部分 -->
                     <div class="post-info">
                         <span class="date">2025年11月10日</span>
                         <h3 class="post-title">人工智能在医疗领域的突破性应用</h3>
                         <p class="post-excerpt">AI如何改变医疗诊断和治疗方案，提高医疗准确性和效率的最新研究...</p>
-                        <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
                     </div>
+                    
+                    <!-- 文章轮播图部分 -->
                     <div class="post-carousel">
                         <div class="carousel-container">
                             <div class="carousel-slide active">
-                                <img src="img/article1/001.png" alt="AI医疗应用" onerror="this.src='https://via.placeholder.com/400x300/8699b1/ffffff?text=AI+医疗应用'">
+                                <img src="img/article1/001.png" alt="AI医疗应用">
                             </div>
                             <div class="carousel-slide">
-                                <img src="img/article1/002.png" alt="AI诊断系统" onerror="this.src='https://via.placeholder.com/400x300/a3b5c9/ffffff?text=AI+诊断系统'">
+                                <img src="img/article1/002.png" alt="AI诊断系统">
                             </div>
                             <div class="carousel-slide">
-                                <img src="img/article1/003.png" alt="医疗数据分析" onerror="this.src='https://via.placeholder.com/400x300/b6c5d8/ffffff?text=医疗数据分析'">
+                                <img src="img/article1/003.png" alt="医疗数据分析">
                             </div>
+                            <!-- 轮播导航点 -->
                             <div class="carousel-nav">
                                 <span class="nav-dot active" data-slide="0"></span>
                                 <span class="nav-dot" data-slide="1"></span>
@@ -100,23 +129,26 @@
                         </div>
                     </div>
                 </article>
+                    </div>
+                
+                <!-- 第二篇文章卡片 -->
                 <article class="post-card framed-post">
                     <div class="post-info">
                         <span class="date">2025年11月5日</span>
                         <h3 class="post-title">ACM国际大学生程序设计竞赛攻略</h3>
                         <p class="post-excerpt">从备赛到参赛，分享ACM-ICPC竞赛经验与算法优化技巧，助你在竞赛中脱颖而出...</p>
-                        <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="post-carousel">
                         <div class="carousel-container">
                             <div class="carousel-slide active">
-                                <img src="img/article2/001.png" alt="ACM竞赛" onerror="this.src='https://via.placeholder.com/400x300/8699b1/ffffff?text=ACM+竞赛'">
+                                <img src="img/article2/001.png" alt="ACM竞赛">
                             </div>
                             <div class="carousel-slide">
-                                <img src="img/article2/002.png" alt="编程比赛" onerror="this.src='https://via.placeholder.com/400x300/a3b5c9/ffffff?text=编程比赛'">
+                                <img src="img/article2/002.png" alt="编程比赛">
                             </div>
                             <div class="carousel-slide">
-                                <img src="img/article2/003.png" alt="算法设计" onerror="this.src='https://via.placeholder.com/400x300/b6c5d8/ffffff?text=算法设计'">
+                                <img src="img/article2/003.png" alt="算法设计">
                             </div>
                             <div class="carousel-nav">
                                 <span class="nav-dot active" data-slide="0"></span>
@@ -126,23 +158,25 @@
                         </div>
                     </div>
                 </article>
+                
+                <!-- 第三篇文章卡片 -->
                 <article class="post-card framed-post">
                     <div class="post-info">
                         <span class="date">2025年10月28日</span>
                         <h3 class="post-title">大语言模型发展与应用前景分析</h3>
                         <p class="post-excerpt">从GPT到最新一代LLM，探索大语言模型的技术演进及其在各行业的革命性应用...</p>
-                        <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="post-carousel">
                         <div class="carousel-container">
                             <div class="carousel-slide active">
-                                <img src="img/article3/001.png" alt="大语言模型" onerror="this.src='https://via.placeholder.com/400x300/8699b1/ffffff?text=大语言模型'">
+                                <img src="img/article3/001.png" alt="大语言模型">
                             </div>
                             <div class="carousel-slide">
-                                <img src="img/article3/002.png" alt="NLP应用" onerror="this.src='https://via.placeholder.com/400x300/a3b5c9/ffffff?text=NLP+应用'">
+                                <img src="img/article3/002.png" alt="NLP应用">
                             </div>
                             <div class="carousel-slide">
-                                <img src="img/article3/003.png" alt="AI技术发展" onerror="this.src='https://via.placeholder.com/400x300/b6c5d8/ffffff?text=AI+技术发展'">
+                                <img src="img/article3/003.png" alt="AI技术发展">
                             </div>
                             <div class="carousel-nav">
                                 <span class="nav-dot active" data-slide="0"></span>
@@ -153,52 +187,153 @@
                     </div>
                 </article>
             </div>
+            
+            <!-- 加载更多按钮 -->
             <div class="load-more">
                 <button class="btn">加载更多文章</button>
             </div>
         </section>
-        <aside class="sidebar">
-            <!-- 侧边栏内容已删除 -->
-        </aside>
+        
+        <!-- 博客数据统计展示区 -->
+        <section class="stats-section">
+            <div class="container">
+                <h2 class="section-title">博客数据统计</h2>
+                <div class="stats-grid">
+                    <!-- 技术文章数量统计 -->
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="stat-number" data-count="156">0</div>
+                        <div class="stat-label">技术文章</div>
+                    </div>
+                    
+                    <!-- 订阅用户数量统计 -->
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number" data-count="2580">0</div>
+                        <div class="stat-label">订阅用户</div>
+                    </div>
+                    
+                    <!-- 文章浏览量统计 -->
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-number" data-count="45720">0</div>
+                        <div class="stat-label">文章浏览</div>
+                    </div>
+                    
+                    <!-- 点赞收藏数量统计 -->
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-number" data-count="8964">0</div>
+                        <div class="stat-label">点赞收藏</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技术栈展示区 -->
+        <section class="tech-stack-section">
+            <div class="container">
+                <h2 class="section-title">技术栈与工具</h2>
+                <div class="tech-grid">
+                    <!-- 前端开发技术 -->
+                    <div class="tech-category">
+                        <h3>前端开发</h3>
+                        <div class="tech-items">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 后端开发技术 -->
+                    <div class="tech-category">
+                        <h3>后端开发</h3>
+                        <div class="tech-items">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                    
+                    <!-- AI与机器学习技术 -->
+                    <div class="tech-category">
+                        <h3>AI & 机器学习</h3>
+                        <div class="tech-items">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 开发工具 -->
+                    <div class="tech-category">
+                        <h3>开发工具</h3>
+                        <div class="tech-items">
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">VS Code</span>
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <!-- 网站页脚 -->
     <footer>
         <div class="container">
             <div class="footer-content">
+                <!-- 页脚Logo -->
                 <div class="footer-logo">
-                    <h2>TechFusion</h2>
+                    <h2>TechPack</h2>
                     <p>探索、创新、分享</p>
                 </div>
-                <!-- 简化页脚链接 -->
+                
+                <!-- 页脚导航链接 -->
                 <div class="footer-links">
-                    <!-- 合并链接区域 -->
                     <div class="footer-section">
                         <h4>快速链接</h4>
                         <ul>
                             <li><a href="#">首页</a> · <a href="#">博客</a> · <a href="#">关于</a> · <a href="#">联系</a></li>
                             <li><a href="#">科技</a> · <a href="#">旅行</a> · <a href="#">美食</a> · <a href="#">生活方式</a></li>
-                            <li><a href="mailto:info@techfusion.com">邮箱联系</a> · <a href="#">社交媒体</a></li>
+                            <li><a href="mailto:info@techpack.com">邮箱联系</a> · <a href="#">社交媒体</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
+            
+            <!-- 版权信息 -->
             <div class="copyright">
                 <p style="color: red;">&copy; 河南大学 软件学院 2410250230 李耘辉制作</p>
             </div>
         </div>
     </footer>
 
-    <!-- GitHub链接 -->
+    <!-- GitHub项目链接按钮 - 位于页面右下角 -->
     <a href="https://github.com/NIKOPACK" target="_blank" class="github-link" title="访问我的GitHub">
         <i class="fab fa-github"></i>
     </a>
-    
-    <!-- 底部右下角图片 -->
-    <div class="corner-image">
-        <img src="img/1.jpg" alt="技术博客" />
-    </div>
-    
-    <!-- 保留必要的脚本 -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Live2D 看板娘相关脚本 -->
+    <script src="./live2d-widget/dist/autoload.js"></script>
+    <script src="js/live2d-config.js"></script>
+
+    <!-- JavaScript文件引入 - 放在页面底部提高加载性能 -->
     <script src="script.js"></script>
 </body>
 </html>
